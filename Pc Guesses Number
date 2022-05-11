@@ -1,0 +1,37 @@
+#Imported random module 
+import random
+guess = None
+guesses = 3
+#assigned a random choice from 0 to 5 to numbers
+easy_comp =  random.randint(0,10)
+
+#While loop where the guess is not the same as the computer number
+
+while guess != easy_comp:
+#here guess is assigned to input from the user as INT
+  guess = int(input("Enter a number from 0 to 10: "))
+  
+
+#prints a hint to the user if their guess is larger than the computer's number
+  if guess > easy_comp:
+    print("smaller than that!")
+    print("Guess again")
+    guesses -= 1
+    print(f"You have {guesses} left ")
+
+#prints a hint to the user if their guess is smaller than the computer's number
+  elif guess < easy_comp:
+    print("bigger than that!")
+    print("Guess again")
+    guesses -= 1
+    print(f"You have {guesses} guesses left ")
+
+  if guesses == 0:
+    print("You have run out of guesses! game over")
+    break
+    
+#breaks the loop if the guess is the same
+  if guess == easy_comp:
+    print("Correct!")
+    break
+
